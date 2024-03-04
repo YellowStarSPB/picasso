@@ -11,10 +11,16 @@ const PostList: FC = () => {
     const status = useAppSelector(selectStatus);
     return (
         <div className={styles.postsList}>
-            {posts.map((post) => (
-                <Post key={post.id} post={post} />
-            ))}
-            {status === 'loading' ? fakeData.map((_,index) => <FakePost key={index} />) : ''}
+            {posts.map((post) => {
+                let longText = false;
+                if (post.body.length > 140) {
+                    longText = true;
+                }
+                return <Post key={post.id} longText={longText} post={post} />;
+            })}
+            {status === 'loading'
+                ? fakeData.map((_, index) => <FakePost key={index} />)
+                : ''}
         </div>
     );
 };

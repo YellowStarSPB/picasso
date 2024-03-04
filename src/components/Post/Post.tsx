@@ -6,18 +6,22 @@ import styles from './Post.module.scss';
 
 type PostProps = {
     post: Pick<PostType, 'id' | 'title' | 'body'>;
+    longText: boolean;
 };
 
-const Post: FC<PostProps> = ({ post }) => {
+const Post: FC<PostProps> = ({ post, longText }) => {
     return (
-        <Link to={`/post/${post.id}`} className={styles.post}>
+        <div className={styles.post}>
             <div className={styles.postTop}>
                 <span className={styles.mark}>{post.id}</span>
                 <h3 className={styles.postTitle}>{post.title}</h3>
             </div>
 
-            <p className={styles.postText}>{post.body}</p>
-        </Link>
+            <p className={`${styles.postText} ${longText ? styles.longText : ''}`}>
+                {post.body}
+            </p>
+            {longText && <Link className={styles.button} to={`/post/${post.id}`}>Подробнее</Link>}
+        </div>
     );
 };
 
