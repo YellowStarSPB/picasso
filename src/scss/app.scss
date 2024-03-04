@@ -1,0 +1,16 @@
+@import './assets/reset';
+@import './assets/colors';
+
+body {
+    font-family: 'Madimi One', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: $--main-bg;
+}
+.container {
+    max-width: 1320px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px 0;
+
+}

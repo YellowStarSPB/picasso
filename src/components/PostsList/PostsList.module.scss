@@ -1,0 +1,11 @@
+@import '../../scss/assets/colors';
+
+.postsList {
+    background-color: $--components-bg;
+    box-shadow: 0 9px 16px 0 rgba(16, 24, 50, 0.39);
+    border-radius: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}

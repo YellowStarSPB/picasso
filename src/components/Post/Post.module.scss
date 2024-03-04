@@ -1,0 +1,48 @@
+@import '../../scss/assets/colors';
+
+.post {
+    width: 100%;
+    box-shadow: 0 9px 16px 0 rgba(16, 24, 50, 0.39);
+    border-radius: 20px;
+    background: $--white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    .postTop {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        .mark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: $--black;
+            color: $--white;
+            margin-right: 20px;
+        }
+        .postTitle {
+            font-size: 18px;
+            color: #000;
+            text-transform: uppercase;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            line-height: 1.3em;
+            height: calc(1.3em * 3);
+        }
+    }
+    .postText {
+        margin-bottom: auto;
+        color: $--violet;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        height: calc(1.3em * 5);
+    }
+}
