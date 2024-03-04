@@ -13,7 +13,6 @@ export type PostState = {
     status: string;
 };
 
-
 export const fetchPosts = createAsyncThunk<PostType[], number>(
     '@@posts/fetchPosts',
     async function (start, { rejectWithValue }) {
@@ -24,7 +23,9 @@ export const fetchPosts = createAsyncThunk<PostType[], number>(
             );
             return data;
         } catch (error) {
-            return rejectWithValue(error.message);
+            let message = 'Unknown Error';
+            if (error instanceof Error) message = error.message;
+            return rejectWithValue(message);
         }
     },
 );
